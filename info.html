@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="instructorMessage"></div>
+    <div id="studentMessage"></div>
+    <button id="button1">1</button>
+    <button id="button2">2</button>
+    <button id="button3">3</button>
+
+    <script>
+            var role = localStorage.getItem("role");
+            var name = localStorage.getItem("name");
+            if (role === "instructor") {
+                document.getElementById("instructorMessage").innerHTML = "Welcome back, Instructor " + name + "!";
+                document.getElementById("studentMessage").style.display = "none";
+                document.getElementById("button3").style.display = "none";
+            }
+            else if (role === "student") {
+                document.getElementById("studentMessage").innerHTML = "Welcome back, student " + name + "!";
+                document.getElementById("instructorMessage").style.display = "none";
+                document.getElementById("button1").style.display = "none";
+            }   
+    </script>
+</body>
+</html>
